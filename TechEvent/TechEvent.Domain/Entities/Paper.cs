@@ -5,10 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechEvent.Domain.Entities
 {
-    public partial class Workshops
+    public partial class Paper
     {
         public int Id { get; set; }
-        public int SpeakerId { get; set; }
-        public int TalkTypeId { get; set; }
+        public int EditionId { get; set; }
     }
 }

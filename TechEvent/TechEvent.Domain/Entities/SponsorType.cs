@@ -5,10 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechEvent.Domain.Entities
 {
-    public partial class Editions
+    public partial class SponsorType
     {
         public int Id { get; set; }
-        public int Year { get; set; }
-        public string Tagline { get; set; }
+        public string Name { get; set; }
     }
 }

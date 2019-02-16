@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechEvent.Domain.Entities
 {
-    public partial class Speakers
+    public partial class Speaker
     {
         public int Id { get; set; }
         [Required]

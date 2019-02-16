@@ -2,10 +2,13 @@
 
 namespace TechEvent.Data.Infrastructure
 {
-    public class TechEventContext : DbContext
+    public partial class TechEventContext : DbContext
     {
         public TechEventContext(DbContextOptions<TechEventContext> options) : base(options)
         {
+
         }
     }
+
 }
+

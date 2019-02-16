@@ -5,11 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TechEvent.Domain.Entities
 {
-    public partial class Sponsors
+    public partial class Sponsor
     {
-        public Sponsors()
+        public Sponsor()
         {
-            InverseSponsorType = new HashSet<Sponsors>();
+            InverseSponsorType = new HashSet<Sponsor>();
         }
 
         public int Id { get; set; }
@@ -23,8 +23,8 @@ namespace TechEvent.Domain.Entities
 
         [ForeignKey("SponsorTypeId")]
         [InverseProperty("InverseSponsorType")]
-        public virtual Sponsors SponsorType { get; set; }
+        public virtual Sponsor SponsorType { get; set; }
         [InverseProperty("SponsorType")]
-        public virtual ICollection<Sponsors> InverseSponsorType { get; set; }
+        public virtual ICollection<Sponsor> InverseSponsorType { get; set; }
     }
 }

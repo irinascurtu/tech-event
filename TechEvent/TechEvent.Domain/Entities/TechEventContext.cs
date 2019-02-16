@@ -15,15 +15,15 @@ namespace TechEvent.Domain.Entities
         {
         }
 
-        public virtual DbSet<Editions> Editions { get; set; }
-        public virtual DbSet<PaperStatuses> PaperStatuses { get; set; }
-        public virtual DbSet<Papers> Papers { get; set; }
-        public virtual DbSet<Speakers> Speakers { get; set; }
-        public virtual DbSet<SponsorTypes> SponsorTypes { get; set; }
-        public virtual DbSet<Sponsors> Sponsors { get; set; }
-        public virtual DbSet<TalkTypes> TalkTypes { get; set; }
-        public virtual DbSet<Talks> Talks { get; set; }
-        public virtual DbSet<Workshops> Workshops { get; set; }
+        public virtual DbSet<Edition> Editions { get; set; }
+        public virtual DbSet<Paper> Papers { get; set; }
+        public virtual DbSet<PaperStatus> PaperStatuses { get; set; }
+        public virtual DbSet<Speaker> Speakers { get; set; }
+        public virtual DbSet<Sponsor> Sponsors { get; set; }
+        public virtual DbSet<SponsorType> SponsorTypes { get; set; }
+        public virtual DbSet<Talk> Talks { get; set; }
+        public virtual DbSet<TalkType> TalkTypes { get; set; }
+        public virtual DbSet<Workshop> Workshops { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -38,7 +38,7 @@ namespace TechEvent.Domain.Entities
         {
             modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
 
-            modelBuilder.Entity<Sponsors>(entity =>
+            modelBuilder.Entity<Sponsor>(entity =>
             {
                 entity.HasOne(d => d.SponsorType)
                     .WithMany(p => p.InverseSponsorType)
