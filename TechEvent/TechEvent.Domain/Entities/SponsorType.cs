@@ -7,7 +7,15 @@ namespace TechEvent.Domain.Entities
 {
     public partial class SponsorType
     {
+        public SponsorType()
+        {
+            Sponsors = new HashSet<Sponsor>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
+
+        [InverseProperty("SponsorType")]
+        public virtual ICollection<Sponsor> Sponsors { get; set; }
     }
 }

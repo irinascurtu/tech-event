@@ -41,10 +41,10 @@ namespace TechEvent.Domain.Entities
             modelBuilder.Entity<Sponsor>(entity =>
             {
                 entity.HasOne(d => d.SponsorType)
-                    .WithMany(p => p.InverseSponsorType)
+                    .WithMany(p => p.Sponsors)
                     .HasForeignKey(d => d.SponsorTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Sponsors_Sponsors");
+                    .HasConstraintName("FK_Sponsors_SponsorTypes");
             });
         }
     }

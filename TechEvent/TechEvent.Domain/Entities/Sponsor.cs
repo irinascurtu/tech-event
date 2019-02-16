@@ -7,11 +7,6 @@ namespace TechEvent.Domain.Entities
 {
     public partial class Sponsor
     {
-        public Sponsor()
-        {
-            InverseSponsorType = new HashSet<Sponsor>();
-        }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Website { get; set; }
@@ -22,9 +17,7 @@ namespace TechEvent.Domain.Entities
         public bool Active { get; set; }
 
         [ForeignKey("SponsorTypeId")]
-        [InverseProperty("InverseSponsorType")]
-        public virtual Sponsor SponsorType { get; set; }
-        [InverseProperty("SponsorType")]
-        public virtual ICollection<Sponsor> InverseSponsorType { get; set; }
+        [InverseProperty("Sponsors")]
+        public virtual SponsorType SponsorType { get; set; }
     }
 }
